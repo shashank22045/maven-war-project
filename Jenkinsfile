@@ -3,7 +3,7 @@ pipeline {
     environment {
         PATH ="/opt/apache-tomcat-9.0.119/bin:$PATH"  
         DOCKER_HOST_USER = 'docker' // e.g., 'ubuntu' or 'ec2-user'
-        DOCKER_HOST_IP = 'ec2-3-91-76-112.compute-1.amazonaws.com'
+        DOCKER_HOST_IP = 'ec2-54-81-124-179.compute-1.amazonaws.com'
         DOCKER_APP_DIR = '/opt/' // Remote directory for your app files
         WAR_FILE_NAME = 'devnew.war'
     }
@@ -29,7 +29,7 @@ pipeline {
 
                  sh "ls -l $WORKSPACE/target/"
                  sh "pwd"
-                 sh "scp -o StrictHostKeyChecking=no $WORKSPACE/target/devnew.war tomcat@ec2-3-91-76-112.compute-1.amazonaws.com:/opt/apache-tomcat-9.0.119/webapps"
+                 sh "scp -o StrictHostKeyChecking=no $WORKSPACE/target/devnew.war tomcat@ec2-54-81-124-179.compute-1.amazonaws.com:/opt/apache-tomcat-9.0.119/webapps"
 
 
                 }
